@@ -1,0 +1,52 @@
+{
+  "name": "pets4homes-alerts",
+  "version": "1.0.0",
+  "description": "I WANT A GODDAM PUPPY",
+  "main": "app/index.js",
+  "scripts": {
+    "format": "prettier-standard '**/*.js'",
+    "deploy": "pm2 deploy production",
+    "start": "node .",
+    "logs": "pm2 deploy production exec \"pm2 logs tesco-alerts\"",
+    "restart": "pm2 deploy production exec \"pm2 restart tesco-alerts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverwoodings/pets4homes-alerts.git"
+  },
+  "author": "Oli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliverwoodings/pets4homes-alerts/issues"
+  },
+  "homepage": "https://github.com/oliverwoodings/pets4homes-alerts#readme",
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^10.1.1",
+    "nodemon": "^2.0.2",
+    "pm2": "^4.2.3",
+    "prettier-standard": "^16.2.1"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.15.4",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "config": "^3.3.1",
+    "cron": "^1.8.2",
+    "driftwood": "^1.5.5",
+    "fs-extra": "^9.0.0",
+    "js-yaml": "^3.13.1",
+    "twilio": "^3.42.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-standard"
+    ]
+  }
+}

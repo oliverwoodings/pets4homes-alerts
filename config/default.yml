@@ -1,0 +1,16 @@
+checks:
+  - url: foo
+    phoneNumber: bar
+
+twilio:
+  accountSid: AC479050186f2a17f5874a17cdd57f2f03
+  authToken: bar
+  from: '+441173253659'
+
+sentry:
+  enabled: false
+  dsn: foo
+
+schedule: '*/30 * * * *'
+
+runOnStart: true

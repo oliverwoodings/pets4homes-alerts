@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "pets4homes-alerts",
+      "script": "npm run start",
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "root",
+      "host": "danniandoli.wedding",
+      "ref": "origin/master",
+      "repo": "git@github.com:oliverwoodings/pets4homes-alerts.git",
+      "path": "/root/apps/pets4homes-alerts",
+      "post-deploy": "nvm use && npm i --production && npx pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}
